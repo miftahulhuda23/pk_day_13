@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "../Component/Navbar/Navbar";
 import Home from "./Home/Home";
 import Student from "../Pages/Student/Student";
-import API from "../Pages/API/API";
+import Index from "./API/Index";
 
-const Index = () => {
+const index = () => {
   return (
     <div>
       <Router>
         <Navbar />
         <div className="container-fluid">
           <Switch>
+            <Route path="/api" component={Index} />
             <Route path="/student" component={Student} />
-            <Route path="/API" component={API} />
             <Route path="/" exact component={Home} />
           </Switch>
         </div>
@@ -22,4 +22,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default index;
